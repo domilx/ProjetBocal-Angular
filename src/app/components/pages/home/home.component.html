@@ -1,5 +1,8 @@
-<p>
-  Welcome to the site!! <br>
-  Please sign in to continue. <br>
-</p>
-<button class="button" (click)="auth.googleSignin()">Login with Google</button>
+<div *ngIf="!(auth.user$ | async)" class="login">
+  <p>
+    Welcome to the site!! <br>
+    Please sign in to continue. <br>
+  </p>
+
+  <button class="button"  (click)="auth.googleSignin()">Login with Google</button>
+</div>

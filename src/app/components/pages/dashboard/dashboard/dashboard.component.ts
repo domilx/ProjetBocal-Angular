@@ -1,4 +1,3 @@
-import { NavbarComponent } from './../../../shared/navbar/navbar.component';
 import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
@@ -11,7 +10,7 @@ import { AuthService } from '../../../../services/auth.service';
 export class DashboardComponent implements OnInit {
 
   @Output() isLogout = new EventEmitter<void>()
-  constructor(NavbarComponent : NavbarComponent, public auth: AuthService) { }
+  constructor(public auth: AuthService) { }
 
 
   ngOnInit(): void {

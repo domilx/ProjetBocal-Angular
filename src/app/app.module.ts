@@ -24,7 +24,8 @@ import { SettingsComponent } from './components/pages/settings/settings.componen
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MaterialModule } from './material.module';
-;
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 
 @NgModule({
@@ -58,7 +59,14 @@ import { MaterialModule } from './material.module';
     provideAuth(() => getAuth()),
 
   ],
-  providers: [AngularFirestoreModule, AngularFireModule, AngularFireAuthModule, AngularFireDatabaseModule],
+  providers: [
+    AngularFirestoreModule,
+    AngularFireModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AuthGuard,
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
