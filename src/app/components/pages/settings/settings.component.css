@@ -1,0 +1,113 @@
+
+.header h1 {
+
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 56px;
+  margin: 15px 5px;
+}
+.header h2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  margin: 15px 0 25px 0;
+}
+
+.toptext {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  width: 75%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.update-form {
+  float: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 16px;
+  width: 75%;
+  max-width: 540px;
+  margin: auto;
+}
+
+.delete-form
+{
+  float: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 16px;
+  width: 75%;
+  max-width: 540px;
+  margin: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .update-container {
+    width: 60%;
+    margin: auto;
+  }
+
+  .update-container img {
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.update-container h1 {
+  font-weight: bolder;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.form-field-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.email-input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 60%;
+}
+
+.password-input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40%;
+}
+
+.matricule-input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+}
+
+.telephone-input, .name-input {
+  flex: 1 1 50%;
+}
+
+button {
+  margin-top: 5px;
+}
+
+.login-link {
+  display: block;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.green-banner {
+  background-color: #39e366;
+  border: 1px solid #2aa149;
+  border-radius: 1px;
+  padding: 5px;
+}

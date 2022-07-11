@@ -1,0 +1,34 @@
+<p style="margin-bottom:4cm;"></p>
+
+<div class="main-xs">
+  <div class="login-container">
+    <img src="https://3qatk01w1vii2q68o61nciu3-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/logo-avec-nom-horiz.jpg">
+    <div *ngIf="error" class="alert alert-danger">
+      {{error.message}}
+    </div>
+    <h1> Login </h1>
+    <p> In order to access <span class="bold">Projet Bocal</span>, please enter your login info</p>
+    <form (submit)="onLogin(loginForm)" class="login-form" #loginForm="ngForm">
+      <div class="form-field-container">
+        <mat-form-field appearance="outline" color="" class="email-input">
+          <mat-label>Email</mat-label>
+          <input type="email" name="email" ngModel placeholder="exemple@gmail.com" matInput #emailInput="ngModel" required email>
+          <mat-icon matSuffix>alternate_email</mat-icon>
+          <mat-error *ngIf="emailInput.invalid">Wrong email</mat-error>
+        </mat-form-field>
+        <p style="margin-left:1000px;"></p>
+        <mat-form-field appearance="outline" color="" class="password-input">
+          <mat-label>Password</mat-label>
+          <input type="password" name="password" ngModel matInput #passwordInput="ngModel" required>
+          <mat-icon matSuffix>security</mat-icon>
+          <mat-error *ngIf="passwordInput.invalid">Wrong password</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button type="submit" color="">Login</button> <br>
+      <p style="margin-bottom:0.5cm;"></p>
+      <a routerLink="/signup" class="signup-link"> Sign-up </a>
+    </form>
+  </div>
+</div>
+
+<p style="margin-bottom:5cm;"></p>

@@ -1,0 +1,48 @@
+<div mat-elevation-z4>
+  <mat-toolbar color="primary">
+    <button routerLink="dashboard" mat-button aria-label="Home">
+      <mat-icon>home</mat-icon>
+      Projet Bocal
+    </button>
+
+    <span class="spacer-1"></span>
+
+    <button mat-button aria-label="Classroom">
+      <mat-icon>class</mat-icon>
+      Classroom
+    </button>
+
+    <button mat-button aria-label="Links">
+      <mat-icon>links</mat-icon>
+      Links
+    </button>
+
+    <span class="spacer-1"></span>
+
+    <button mat-button aria-label="Logout" *ngIf="auth.user$ | async as user" (click)="auth.signOut()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout, {{ user.displayName }}
+    </button>
+    <span class="spacer"></span>
+
+    <button routerLink="settings" mat-icon-button aria-label="settings" *ngIf="auth.user$ | async as user">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <button routerLink="contact" mat-icon-button aria-label="contact">
+      <mat-icon>contacts</mat-icon>
+    </button>
+    <button routerLink="about" mat-icon-button aria-label="about">
+      <mat-icon>help</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Github" [matMenuTriggerFor]="menu">
+      <mat-icon>code</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a href="https://github.com/domilx/ProjetBocal-Angular" mat-menu-item>Project Source</a>
+      <a href="https://github.com/domilx" mat-menu-item>domi's GitHub</a>
+      <a href="https://github.com/DriZzy208" mat-menu-item>DriZzy208's Github</a>
+      <a href="https://github.com/ma17du32et422" mat-menu-item>Charles' Github</a>
+    </mat-menu>
+
+  </mat-toolbar>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projetbocal-897b2": {
+      "hosting": {
+        "ProjetBocal": [
+          "projetbocal-897b2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projetbocal-897b2"
+  }
+}

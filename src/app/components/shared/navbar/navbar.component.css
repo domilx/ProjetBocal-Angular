@@ -1,0 +1,20 @@
+.navbar-light .navbar-nav .nav-link
+{
+    color: var(--secondary-color);
+}
+.navbar-light .navbar-nav .nav-link.active-link
+{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.title {
+  flex: 0 0 auto;
+  padding-right: 10px;
+  padding-top: 2px;
+}
+.spacer-1 {
+  width: 100px;
+}

@@ -1,0 +1,59 @@
+<p style="margin-bottom:2cm;"></p>
+
+<div class="main-xs">
+  <div>
+    <div class="signup-container">
+      <img src="https://3qatk01w1vii2q68o61nciu3-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/logo-avec-nom-horiz.jpg">
+      <div class="alert alert-success" *ngIf="showGreenBanner">
+        <strong>Sign up successful!</strong> You can now login.
+      </div>
+      <div *ngIf="showErrorBox" class="alert alert-danger">
+        {{errorBoxMessage}}
+      </div>
+      <h1> Create an account </h1>
+      <p> To create an account on <span class="bold">Projet Bocal</span>, please enter the required information</p>
+      <form class="signup-form" #signupForm="ngForm" (submit)="onSignup(signupForm)">
+        <div class="form-field-container">
+          <mat-form-field appearance="outline"  class="email-input">
+            <mat-label>Email</mat-label>
+            <input type="email" name="email" ngModel placeholder="exemple@gmail.com" matInput #emailInput="ngModel" required email>
+            <mat-icon matSuffix>alternate_email</mat-icon>
+            <mat-error *ngIf="emailInput.invalid">Invalid email</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline"  class="name-input">
+            <mat-label>Name</mat-label>
+            <input type="text" name="name" ngModel placeholder="Ex: John Doe" matInput #nameInput="ngModel" required>
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-error *ngIf="nameInput.invalid">Invalid name</mat-error>
+          </mat-form-field>
+
+         
+          <mat-form-field appearance="outline"  class="matricule-input">
+              <mat-label>Matricule</mat-label>
+              <input matInput #matriculeInput="" maxlength="8" placeholder="Ex: 19190001"  required>
+              <mat-hint align="end">{{matriculeInput.value?.length || 0}}/8</mat-hint>
+              <!mat-error *ngIf="matriculeInput.invalid">Invalid matricule<!/mat-error>
+            </mat-form-field>
+            
+          <mat-form-field appearance="outline"  class="password-input">
+            <mat-label>Password</mat-label>
+            <input type="password" name="password" ngModel matInput #passwordInput="ngModel" required minlength="5">
+            <mat-icon matSuffix>security</mat-icon>
+            <mat-error *ngIf="passwordInput.invalid">Password needs at least one number</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline"  class="password-input">
+            <mat-label>Confirm password</mat-label>
+            <input type="password" name="confirmPassword" ngModel matInput #confirmPasswordInput="ngModel" required minlength="5">
+            <mat-icon matSuffix>security</mat-icon>
+            <mat-error *ngIf="passwordInput.invalid">Passwords need to match</mat-error>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit">Create an account</button> <br>
+        <p style="margin-bottom:0.5cm;"></p>
+        <a routerLink="/login" class="login-link"> Sign-in </a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<p style="margin-bottom:3.5cm;"></p>
