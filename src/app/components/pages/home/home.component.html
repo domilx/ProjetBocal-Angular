@@ -1,8 +1,20 @@
-<div *ngIf="!(auth.user$ | async)" class="login">
-  <p>
-    Welcome to the site!! <br>
-    Please sign in to continue. <br>
-  </p>
-
-  <button class="button"  (click)="auth.googleSignin()">Login with Google</button>
-</div>
+<article>
+  <div *ngIf="!(auth.user$ | async)" class="login">
+    <mat-card>
+      <mat-card-content>
+        <h1>        
+          Welcome to the <strong>Projet Bocal</strong>! <br>
+          Please login to access the application. <br>
+        </h1>
+        <p>
+          In order to properly use the application, <br>
+          You must be logged in with your cra.education account given by the school.
+        </p>
+        <cool-google-button color="dark" (click)="auth.googleSignin()">
+          Login with Google
+        </cool-google-button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+</article>

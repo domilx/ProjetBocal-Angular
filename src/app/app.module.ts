@@ -26,6 +26,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
+import { CoolSocialLoginButtonsModule } from '@angular-cool/social-login-buttons';
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import { AuthGuard } from './services/auth.guard';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-
+    CoolSocialLoginButtonsModule,
   ],
   providers: [
     AngularFirestoreModule,
